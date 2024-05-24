@@ -10,7 +10,7 @@
     <title>녹녹 - 구매내역</title>
     <link rel="icon" href="./df27b972333f6d054a66b507a0889949.ico/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="./df27b972333f6d054a66b507a0889949.ico/favicon-16x16.png" />
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="./assets/CSS/Style.css">
 
 <body>
     <!-- 헤더 -->
