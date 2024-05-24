@@ -31,6 +31,7 @@
 	</div>
 	<div id="cmpContent">
         <div>
+
             <img src="./images/complete.png" alt="" id="cmpImg">
 
         </div>
