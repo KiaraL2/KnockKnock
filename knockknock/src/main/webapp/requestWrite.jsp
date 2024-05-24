@@ -11,7 +11,7 @@
 	href="./df27b972333f6d054a66b507a0889949.ico/favicon-16x16.png" />
 <link rel="apple-touch-icon"
 	href="./df27b972333f6d054a66b507a0889949.ico/favicon-16x16.png" />
-<link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="./assets/CSS/Style.css">
 <body>
 	<!-- 헤더 -->
 	<div id="header-container"></div>
@@ -56,25 +56,11 @@
 					</select></td>
 				</tr>
 				<tr>
-					<td>가격대</td>
+					<td>수령방법</td>
 					<td><select name="" id="">
-							<option value="">1만원 미만</option>
-							<option value="">1만원 ~ 3만원</option>
-							<option value="">3만원 ~ 5만원</option>
-							<option value="">5만원 ~ 10만원</option>
-							<option value="">10만원 이상</option>
-					</select></td>
-				</tr>
-				<tr>
-					<td>일조량</td>
-					<td><select name="" id="">
-							<option value=""></option>
-					</select></td>
-				</tr>
-				<tr>
-					<td>관리주기</td>
-					<td><select name="" id="">
-							<option value=""></option>
+							<option value="">온라인 배송</option>
+							<option value="">현장 픽업</option>
+							<option value="">무관</option>
 					</select></td>
 				</tr>
 				<tr>

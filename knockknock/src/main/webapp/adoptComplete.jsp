@@ -11,7 +11,7 @@
 	href="./df27b972333f6d054a66b507a0889949.ico/favicon-16x16.png" />
 <link rel="apple-touch-icon"
 	href="./df27b972333f6d054a66b507a0889949.ico/favicon-16x16.png" />
-<link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="./assets/CSS/Style.css">
 <body>
 	<!-- 헤더 -->
 	<div id="header-container"></div>
@@ -31,8 +31,7 @@
 	</div>
 	<div id="cmpContent">
         <div>
-            <img src="./free-icon-handshake-9009879.png" alt="" id="cmpImg">
-
+            <img src="./images/adopt.png" alt="" id="cmpImg">
         </div>
         <div>
             <h1>~ 님의 제안을 채택하였습니다!</h1>

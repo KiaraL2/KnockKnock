@@ -8,13 +8,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>³ì³ì - ¸¶ÀÌÆäÀÌÁö</title>
+    <title>ë…¹ë…¹ - ë§ˆì´íŽ˜ì´ì§€</title>
     <link rel="icon" href="./df27b972333f6d054a66b507a0889949.ico/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="./df27b972333f6d054a66b507a0889949.ico/favicon-16x16.png" />
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="./assets/CSS/Style.css">
 
 <body>
-    <!-- Çì´õ -->
+    <!-- í—¤ë” -->
     <div id="header-container"></div>
 
     <script>
@@ -27,90 +27,90 @@
         });
     </script>
 
-    <h1>¸¶ÀÌÆäÀÌÁö</h1>
+    <h1>ë§ˆì´íŽ˜ì´ì§€</h1>
     <div class="content">
         <div id="miniProfile">
             <div id="profileDiv1">
-                <img src="./²ÉÁý3.jpg" alt="" class="profileImg">
+                <img src="./ê½ƒì§‘3.jpg" alt="" class="profileImg">
             </div>
             <div id="clientInfo">
                 <div id="nickname">
-                    <span >±¸¸ÅÀÚ ´Ð³×ÀÓ</span>
+                    <span >êµ¬ë§¤ìž ë‹‰ë„¤ìž„</span>
                 </div>
                 <div>
-                    <span>°¡ÀÔÀÏÀÚ : </span><span>2024.01.01</span>
+                    <span>ê°€ìž…ì¼ìž : </span><span>2024.01.01</span>
                 </div>
             </div>
             <div>
                 <div id="updateButton">
-                    <a href="update.jsp" class="pageButton">°³ÀÎÁ¤º¸¼öÁ¤</a>
+                    <a href="update.jsp" class="pageButton">ê°œì¸ì •ë³´ìˆ˜ì •</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Á¦¾È³»¿ª -->
+    <!-- ì œì•ˆë‚´ì—­ -->
     <div class="content">
         <div>
-            <h2>ÀÇ·Ú ³»¿ª</h2>
+            <h2>ì˜ë¢° ë‚´ì—­</h2>
 
             <div class="requestBox">
                 <div class="proposalInfo">
                     <div class="reqTitle">
-                        <h3>ÀÇ·Ú Á¦¸ñ</h3>
+                        <h3>ì˜ë¢° ì œëª©</h3>
                     </div>
                     <div>
                         <span>2024.05.23 20:07</span>
                     </div>
                     <div>
-                        <span>ÀÇ·ÚÀÚ ´Ô</span>
+                        <span>ì˜ë¢°ìž ë‹˜</span>
                     </div>
                 </div>
                 <div class="rightBox">
                     <div>
-                        <!-- Á¦¾ÈÁßÀÎ ÆÇ¸ÅÀÚ -->
+                        <!-- ì œì•ˆì¤‘ì¸ íŒë§¤ìž -->
                         <div class="proposalCount">
 
                         </div>
-                        <span class="requestStatus onGoing">ÀÇ·ÚÁß</span>
+                        <span class="requestStatus onGoing">ì˜ë¢°ì¤‘</span>
                     </div>
                     <div >
-                        <a href="requestShow.jsp" class="pageButton">ÀÇ·ÚÇöÈ²</a>
+                        <a href="requestShow.jsp" class="pageButton">ì˜ë¢°í˜„í™©</a>
                     </div>
                 </div>
             </div>
             <div class="requestBox">
                 <div class="proposalInfo">
                     <div class="reqTitle">
-                        <h3>ÀÇ·Ú Á¦¸ñ</h3>
+                        <h3>ì˜ë¢° ì œëª©</h3>
                     </div>
                     <div>
                         <span>2024.05.23 20:07</span>
                     </div>
                     <div>
-                        <span>ÀÇ·ÚÀÚ ´Ô</span>
+                        <span>ì˜ë¢°ìž ë‹˜</span>
                     </div>
                 </div>
                 <div>
-                    <span class="requestStatus proposalComlete">°Å·¡ ¿Ï·á</span>
+                    <span class="requestStatus proposalComlete">ê±°ëž˜ ì™„ë£Œ</span>
                     <a href="requestShow.jsp" class="pageButton">
-                            °Å·¡³»¿ª º¸±â
+                            ê±°ëž˜ë‚´ì—­ ë³´ê¸°
                         </a>
                 </div>
             </div>
             <div class="requestBox">
                 <div class="proposalInfo">
                     <div class="reqTitle">
-                        <h3>ÀÇ·Ú Á¦¸ñ</h3>
+                        <h3>ì˜ë¢° ì œëª©</h3>
                     </div>
                     <div>
                         <span>2024.05.23 20:07</span>
                     </div>
                     <div>
-                        <span>ÀÇ·ÚÀÚ ´Ô</span>
+                        <span>ì˜ë¢°ìž ë‹˜</span>
                     </div>
                 </div>
                 <div>
-                    <span class="requestStatus reqCancel">ÀÇ·Ú Ãë¼Ò</span>
+                    <span class="requestStatus reqCancel">ì˜ë¢° ì·¨ì†Œ</span>
                 </div>
             </div>
         </div>
