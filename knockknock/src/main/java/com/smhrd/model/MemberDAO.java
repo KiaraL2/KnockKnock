@@ -17,4 +17,22 @@ public class MemberDAO {
 		
 		return cust_list;
 	}
+
+	public int custJoin(CustomerDTO custDTO) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int row = session.insert("custJoin", custDTO);
+		
+		session.close();
+		
+		return row;
+	}
+
+	public int sellerJoin(SellerDTO sellerDTO) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int row = session.insert("sellerJoin", sellerDTO);
+		
+		session.close();
+		
+		return row;
+	}
 }
