@@ -1,37 +1,45 @@
 package com.smhrd.model;
 
-import java.sql.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
 @Getter
 @Setter
 public class CustomerDTO {
-	private int cust_no;
-	@NonNull private String cust_id;
-	@NonNull private String cust_pw;
-	@NonNull private String cust_nick;
-	@NonNull private String cust_addr;
-	@NonNull private String cust_email;
-	@NonNull private String cust_phone;
-	@NonNull private String cust_gender;
-	@NonNull private String cust_birthdate;
-	private Date joined_at;
-	private String is_deleted;
-	private String cust_img;
-	@Override
-	public String toString() {
-		return "CustomerDTO [cust_id=" + cust_id + ", cust_pw=" + cust_pw + ", cust_nick=" + cust_nick + ", cust_addr="
-				+ cust_addr + ", cust_email=" + cust_email + ", cust_phone=" + cust_phone + ", cust_gender="
-				+ cust_gender + ", cust_birthdate=" + cust_birthdate + "]";
-	}
-	
+	    // 구매자 식별자 
+	    private int cust_no;
+
+	    // 구매자 아이디 
+	    private String cust_id;
+
+	    // 구매자 비밀번호 
+	    private String cust_pw;
+
+	    // 구매자 별명 
+	    private String cust_nick;
+
+	    // 구매자 이메일 
+	    private String cust_email;
+
+	    // 구매자 전화번호 
+	    private String cust_phone;
+
+	    // 구매자 성별 
+	    private String cust_gender;
+
+	    // 구매자 생년월일 
+	    private String cust_birthdate;
+
+	    // 구매자 가입일자 
+	    private String joined_at;
+
+	    // 삭제 여부 
+	    private String is_deleted;
+
+	    // 구매자 이미지 
+	    private String cust_img;
 }
