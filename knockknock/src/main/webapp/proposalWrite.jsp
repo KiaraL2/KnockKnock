@@ -1,10 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@page pageEncoding="utf-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page isELIgnored="false" %>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ë…¹ë…¹-í”Œëžœí…Œë¦¬ì–´ í”Œëž«í¼</title>
 </head>
 <body>
     <div class="container">
@@ -12,60 +14,65 @@
             <div>
                 <div>
                     <a href="main.jsp">
-                        <img src="./³ì³ì ºê·£µå·Î°í-001.png" alt="³ì³ì">
+                        <img src="./ë…¹ë…¹ ë¸Œëžœë“œë¡œê³ -001.png" alt="ë…¹ë…¹">
                     </a>
                 </div>
-                <span id="headerTitle">Á¦¾È¼­ ÀÛ¼º</span>
+                <span id="headerTitle">ì œì•ˆì„œ ìž‘ì„±</span>
                 <span class="client">
-                    <a href="">·Î±×¾Æ¿ô</a>
-                    <a href="">¸¶ÀÌÆäÀÌÁö</a>
+                    <a href="LogoutController">ë¡œê·¸ì•„ì›ƒ</a>
+                    <a href="sellerMypage.jsp">ë§ˆì´íŽ˜ì´ì§€</a>
                 </span>
             </div>
             <hr>
         </header>
         <main>
             <section class="proposal-section">
-                <h2>Á¦¾È¼­ ÀÛ¼ºÇÏ±â</h2>
+                <h2>ì œì•ˆì„œ ìž‘ì„±í•˜ê¸°</h2>
                 <div class="content">
+                
+                <!-- requestShow ë¶ˆëŸ¬ì˜¤ê¸° -->
                     <div class="request-details">
-                        <h3>OO´ÔÀÇ ÀÇ·Ú¼­</h3>
+                        <h3>OOë‹˜ì˜ ì˜ë¢°ì„œ</h3>
                         <div class="details">
-                            <p><span>ÀÎÅ×¸®¾î</span> <span>¼ÒÇü</span></p>
-                            <p><span>ÀûÀ½</span> <span>ÀÏÁÖÀÏ</span></p>
-                            <h4>ÇÃ·£Å×¸®¾î µµ¿ÍÁÖ¼¼¿ä</h4>
-                            <p>¼­ÁöÇö ´ÔÀÇ ÀÇ·Ú</p>
+                            <p><span>ì¸í…Œë¦¬ì–´</span> <span>ì†Œí˜•</span></p>
+                            <p><span>ì ìŒ</span> <span>ì¼ì£¼ì¼</span></p>
+                            <h4>í”Œëžœí…Œë¦¬ì–´ ë„ì™€ì£¼ì„¸ìš”</h4>
+                            <p>ì„œì§€í˜„ ë‹˜ì˜ ì˜ë¢°</p>
                             <p>2024.05.18 ~ 2024.05.25</p>
                             <div class="images">
                                 <img src="image1.jpg" alt="Image 1">
                                 <img src="image2.jpg" alt="Image 2">
                             </div>
-                            <p>ÀÇ·ÚÀÎÀÌ ¼³Á¤ÇÑ ¿¹»ê: <strong>100,000 ¿ø</strong></p>
-                            <p>¿äÃ» ³»¿ë: ¾Æºü¿¡ ÀÚÀ²·Î ÀÌ»ç¸¦ ÇÏ°Ô µÇ¾ú´Âµ¥ ¸¹ÀÌ ¸¹ÀÌ ÇãÀüÇÏ±âµµ ÇÏ°í ÄèÀûÇÑ ¹æÀ» ¸¸µé°í ½Í¾î¼­ ÀÇ·ÚÇØº¾´Ï´Ù.</p>
+                            <p>ì˜ë¢°ì¸ì´ ì„¤ì •í•œ ì˜ˆì‚°: <strong>100,000 ì›</strong></p>
+                            <p>ìš”ì²­ ë‚´ìš©: ì´ë²ˆì— ì„œìš¸ë¡œ ì´ì‚¬ë¥¼ í•˜ê²Œ ë˜ì—ˆëŠ”ë° ë§Žì´ í—ˆì „í•˜ê¸°ë„ í•˜ê³  ì¾Œì í•œ ë°©ì„ ë§Œë“¤ê³  ì‹¶ì–´ì„œ ì˜ë¢°í•´ë´…ë‹ˆë‹¤.</p>
                         </div>
+                        
+                        
                     </div>
-                    <div class="proposal-form">
-                        <form>
+                        <div class="proposal-form">
+                        <form action="ProposalController" method="post">
                             <div class="form-group">
-                                <label for="title">Á¦¸ñ</label>
-                                <input type="text" id="title" name="title" value="Á¦°¡ ÀÚ½ÅÀÖ°Ô µµ¿Íµå¸®°Ú½À´Ï´Ù!">
+                                <label for="proposal_name">ì œëª©</label>
+                                <input type="text" id="proposal_name" name="proposal_name" placeholder="ì œëª©ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”">
                             </div>
-                            <div class="form-group">
-                                <label for="file1">Ã·ºÎÆÄÀÏ</label>
+           					<!--	 <div class="form-group">
+                                <label for="file1">ì²¨ë¶€íŒŒì¼</label>
                                 <input type="file" id="file1" name="file1">
-                            </div>
+                      			</div>   -->
                             <div class="form-group options">
-                                <label>¿É¼Ç Ãß°¡</label>
-                                <input type="text" name="option_name" placeholder="¿É¼Ç ¸í">
-                                <input type="text" name="price" placeholder="´Ü°¡">
-                                <input type="text" name="quantity" placeholder="¼ö·®">
+                                <label>ì˜µì…˜</label>
+                                <button>ì¶”ê°€</button>
+                                <input type="text" name="proposal_products" placeholder="ì˜µì…˜ ëª…">
+                                <input type="text" name="proposal_price" placeholder="ë‹¨ê°€">
+                                <input type="text" name="proposal_quantity" placeholder="ìˆ˜ëŸ‰">
                             </div>
                             <div class="form-group">
-                                <label for="description">¼³¸íÀÔ·Â</label>
-                                <textarea id="description" name="description"></textarea>
+                                <label for="proposal_description">ì„¤ëª…ìž…ë ¥</label>
+                                <textarea id="proposal_description" name="proposal_description"></textarea>
                             </div>
                             <div class="form-group">
-                                <strong>ÃÖÁ¾°ßÀû°¡: ###¿ø</strong>
-                                <button type="submit">Á¦¾È¼­ Á¦Ãâ</button>
+                                <strong>ìµœì¢…ê²¬ì ê°€: ??ì›</strong>
+                                <button type="submit" id="proposal_btn">ì œì•ˆì„œ ì œì¶œ</button>
                             </div>
                         </form>
                     </div>
