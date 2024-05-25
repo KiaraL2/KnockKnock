@@ -32,4 +32,9 @@ public class SellerDTO {
 	private String seller_introduce;
     @NonNull private String seller_regist_num;
     private String is_deleted;
+    
+    public SellerDTO(String id, String pw) {
+    	this.seller_id = id;
+    	this.seller_pw = pw;
+    }
 }

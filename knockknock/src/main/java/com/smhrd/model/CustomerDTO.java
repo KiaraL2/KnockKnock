@@ -27,11 +27,10 @@ public class CustomerDTO {
 	private Date joined_at;
 	private String is_deleted;
 	private String cust_img;
-	@Override
-	public String toString() {
-		return "CustomerDTO [cust_id=" + cust_id + ", cust_pw=" + cust_pw + ", cust_nick=" + cust_nick + ", cust_addr="
-				+ cust_addr + ", cust_email=" + cust_email + ", cust_phone=" + cust_phone + ", cust_gender="
-				+ cust_gender + ", cust_birthdate=" + cust_birthdate + "]";
+	
+	public CustomerDTO(String id, String pw) {
+		this.cust_id = id;
+		this.cust_pw = pw;
 	}
 	
 }
