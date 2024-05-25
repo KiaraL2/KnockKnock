@@ -202,10 +202,6 @@
 <%
         // info : 로그인한 사람의 정보
         CustomerDTO info = (CustomerDTO)session.getAttribute("info");
-		SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
-		SqlSession session2 = sqlSessionFactory.openSession(true);
-		ArrayList<RequestDTO> request_list = (ArrayList) session2.selectList("selectRequest");
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>> :: " + request_list);
 %>
     <header>
         <div>
@@ -218,7 +214,8 @@
             <span class="client">
             <%  if ( info != null) { %>
                     <a href="LogoutController">로그아웃</a>
-                    <a href="마이페이지.jsp">마이페이지</a>
+                    <!-- 구매자일때는 custMypage.. 판매자일때는 sellerMypage... -->
+                    <a href="custMypage.jsp">마이페이지</a>
                 <% } else { %>
                     <a href="Login.jsp">로그인</a>
                 <% } %>
@@ -278,39 +275,10 @@
         </section>
         <section class="requests-section">
             <div class="request-list">
-                <a type="button" class="new-request-btn" href="RequestWrite.jsp">의뢰서 작성</a>
+                <a type="button" class="new-request-btn" href="requestWrite.jsp">의뢰서 작성</a>
 		 <tr>
 		
-			<%-- <c:forEach items="${request_list}" var="request" varStatus="status">
-				<tr>
-			<td>${request.date}</td>
-			<td><a href="RequestDetail.jsp?num=${request.num}">${request.title}</a></td>
-				</tr>
-			</c:forEach>  --%>
-			<% 
-				for(int i=0; i<5; i++){
-			// request_list.toString() 
-			%>
-			
-			<td>
-			<%=
-					
-					request_list.get(i).getCreated_at()
-			%></td>
-			<td>
-			<%=
-					
-					request_list.get(i).getReq_title()
-			%></td>
-			<td>
-			<%=
-					
-					request_list.get(i).getIs_completed()
-			%></td>
-			<%	
-				}
-			%>
-  		  </tr>
+		<!-- 의뢰서리스트 올부분 -->
             </div>
         </section>
     </main>

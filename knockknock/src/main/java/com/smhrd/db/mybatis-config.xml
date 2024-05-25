@@ -15,6 +15,7 @@
 	<typeAliases>
 		<typeAlias type="com.smhrd.model.CustomerDTO" alias="CustomerDTO"/>
 		<typeAlias type="com.smhrd.model.SellerDTO" alias="SellerDTO"/>
+		<typeAlias type="com.smhrd.model.ProposalDTO" alias="ProposalDTO"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -31,5 +32,6 @@
 	<!-- 5. mapper파일 연결하기 -->
 	<mappers>
 		<mapper resource="com/smhrd/mapper/MemberMapper.xml" />
+		<mapper resource="com/smhrd/mapper/ProposalMapper.xml" />
 	</mappers>
 </configuration>
