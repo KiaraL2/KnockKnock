@@ -13,8 +13,7 @@
 
 <body>
 	<div id="centerImg">
-		<a href="main.jsp"> <img src="./images/녹녹 브랜드로고-001.png"
-			alt="녹녹로고">
+		<a href="main.jsp"> <img src="./images/logo.png" alt="녹녹로고">
 		</a>
 	</div>
 	<h1>회원가입</h1>

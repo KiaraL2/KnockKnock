@@ -13,4 +13,3 @@
 		INSERT INTO seller_info(seller_addr, seller_email, seller_id, seller_nick, seller_offline, seller_phone, seller_pw, seller_regist_num, seller_url) VALUES(#{seller_addr}, #{seller_email}, #{seller_id}, #{seller_nick}, #{seller_offline}, #{seller_phone}, #{seller_pw}, #{seller_regist_num}, #{seller_url})
 	</insert>
 </mapper>
-
