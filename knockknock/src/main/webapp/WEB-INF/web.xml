@@ -17,10 +17,17 @@
   	<servlet-class>com.smhrd.controller.LoginController</servlet-class>
   </servlet>
   <servlet>
+<<<<<<< Updated upstream
   	<servlet-name>ProposalController</servlet-name>
   	<display-name>ProposalController</display-name>
   	<description></description>
   	<servlet-class>com.smhrd.controller.ProposalController</servlet-class>
+=======
+  	<servlet-name>ReviewWriteController</servlet-name>
+  	<display-name>ReviewWriteController</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.ReviewWriteController</servlet-class>
+>>>>>>> Stashed changes
   </servlet>
   <servlet-mapping>
   	<servlet-name>JoinController</servlet-name>
@@ -31,7 +38,12 @@
   	<url-pattern>/LoginController</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+<<<<<<< Updated upstream
   	<servlet-name>ProposalController</servlet-name>
   	<url-pattern>/ProposalController</url-pattern>
+=======
+  	<servlet-name>ReviewWriteController</servlet-name>
+  	<url-pattern>/ReviewWriteController</url-pattern>
+>>>>>>> Stashed changes
   </servlet-mapping>
 </web-app>

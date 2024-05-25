@@ -24,21 +24,18 @@
         });
     </script>
 
-	<div class="content">
-		<!-- Page content goes here -->
-	</div>
 	<div id="cmpContent">
 		<div>
 			<img src="./images/adopt.png" alt="" id="cmpImg">
 		</div>
 		<div>
-			<h1>~ 님의 제안을 채택하였습니다!</h1>
+			<h1>${userInfo.seller_nick} 님의 제안을 채택하였습니다!</h1>
 
 		</div>
 		<div>
-			<a href="">
+			<a href="proposalShow.jsp">
 				<div>제안서 조회</div>
-			</a> <a href="">
+			</a> <a href="pay.jsp">
 				<div>결제하기</div>
 			</a>
 		</div>
