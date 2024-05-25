@@ -12,4 +12,10 @@
 	<insert id="sellerJoin" parameterType="SellerDTO">
 		INSERT INTO seller_info(seller_addr, seller_email, seller_id, seller_nick, seller_offline, seller_phone, seller_pw, seller_regist_num, seller_url) VALUES(#{seller_addr}, #{seller_email}, #{seller_id}, #{seller_nick}, #{seller_offline}, #{seller_phone}, #{seller_pw}, #{seller_regist_num}, #{seller_url})
 	</insert>
+	  <select id="custLogin" parameterType="CustomerDTO" resultType="CustomerDTO">
+    select cust_no from customer_info where cust_id=#{cust_id} and cust_pw=#{cust_pw}
+  </select>
+	<select id="sellerLogin" parameterType="SellerDTO" resultType="SellerDTO">
+		select seller_no from seller_info where seller_id=#{seller_id} and seller_pw=#{seller_pw}
+	</select>
 </mapper>
