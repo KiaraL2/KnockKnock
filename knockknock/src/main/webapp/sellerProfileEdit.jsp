@@ -11,7 +11,7 @@
 <title>녹녹-플랜테리어 플랫폼</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" action="ProfileUpdateController" method="post">
         <div class="profile-pic">
             <img src="./profile.jpg" alt="Profile Picture">
             <button class="change-pic-btn">사진 변경</button>
@@ -72,6 +72,7 @@
         <script>
         function updateProfile() {
             // 정보 수정 로직을 여기에 추가
+            alert("정보수정이 완료되었습니다")
             window.location.href = 'main.jsp';
         }
 

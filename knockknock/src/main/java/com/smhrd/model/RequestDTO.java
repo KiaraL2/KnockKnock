@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class RequestDTO {
 	
-	private String req_no;
+	private int req_no;
 	private String req_title;
 	private String req_content;
 	private String req_file;
