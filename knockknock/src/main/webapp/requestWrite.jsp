@@ -36,19 +36,19 @@
 				</tr>
 				<tr>
 					<td>제목</td>
-					<td><input type="text"></td>
+					<td><input type="text" name="requestTitle"></td>
 				</tr>
 				<tr>
 					<td>파일첨부</td>
-					<td><input type="file"></td>
+					<td><input type="file" name="requestFile"></td>
 				</tr>
 				<tr>
 					<td>예산</td>
-					<td><input type="text"></td>
+					<td><input type="text" name="requestBudget"></td>
 				</tr>
 				<tr>
 					<td>용도</td>
-					<td><select name="" id="">
+					<td><select name="purpose" id="">
 							<option value="">인테리어</option>
 							<option value="">식용</option>
 							<option value="">선물용</option>
@@ -57,7 +57,7 @@
 				</tr>
 				<tr>
 					<td>수령방법</td>
-					<td><select name="" id="">
+					<td><select name="howReceive" id="">
 							<option value="">온라인 배송</option>
 							<option value="">현장 픽업</option>
 							<option value="">무관</option>

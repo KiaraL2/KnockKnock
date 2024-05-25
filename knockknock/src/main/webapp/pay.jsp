@@ -6,12 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>녹녹 - 의뢰서 작성</title>
-<link rel="icon"
-	href="./df27b972333f6d054a66b507a0889949.ico/favicon-16x16.png" />
-<link rel="apple-touch-icon"
-	href="./df27b972333f6d054a66b507a0889949.ico/favicon-16x16.png" />
-<link rel="stylesheet" href="./assets/CSS/Style.css">
+<title>녹녹 - 결제하기</title>
+<link rel="icon" href="./images/favicon.ico" />
+<link rel="apple-touch-icon" href="./images/favicon.ico" />
+<link rel="stylesheet" href="./assets/css/style.css">
 <body>
 	<!-- 헤더 -->
 	<div id="header-container"></div>
@@ -38,16 +36,16 @@
         
         <table>
             <tr>
-                <td>흙</td>
-                <td><span>10,000원</span></td>
+                <td>${proposalInfo.getProposal_product() }</td>
+                <td><span>${proposalInfo.getProposal_price() }원</span></td>
             </tr>
             <tr>
-                <td>화분</td>
-                <td><span>10,000원</span></td>
+                <td>${proposalInfo.getProposal_product() }</td>
+                <td><span>${proposalInfo.getProposal_price() }원</span></td>
             </tr>
             <tr>
-                <td>고무나무</td>
-                <td><span>10,000원</span></td>
+                <td>${proposalInfo.getProposal_product() }</td>
+                <td><span>${proposalInfo.getProposal_price() }원</span></td>
             </tr>
             <tr>
                 <td>계</td>
@@ -67,34 +65,34 @@
         </table>
         <h3>총 62,000원</h3>
         <hr>
-        <form action="pay.do" method="post">
+        <form action="payController" method="post">
             <h3>배송지 정보</h3>
             <hr>
             <table>
                 <tr>
                     <td>주소</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" name="address"></td>
                 </tr>
                 <tr>
                     <td>상세주소</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" name="detailAdrress"></td>
                 </tr>
                 <tr>
                     <td>수령인</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" name="takeman"></td>
                 </tr>
                 <tr>
                     <td>전화번호</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" name="phoneNumber"></td>
                 </tr>
                 <tr>
                     <td>배송 요청사항</td>
                     <td>
-                        <select name="" id="">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                        <select name="deliveryRequest" id="">
+                            <option value="none">요청사항 없음</option>
+                            <option value="door">문 앞에 놔주세요</option>
+                            <option value="secu">경비실에 맡겨주세요</option>
+                            <option value="call">배송전에 전화해주세요</option>
                         </select>
                     </td>
                 </tr>
@@ -105,9 +103,9 @@
                 <tr>
                     <td>결제수단</td>
                     <td>
-                        <input type="checkbox">카드결제
-                        <input type="checkbox">실시간 계좌이체
-                        <input type="checkbox">무통장입금
+                        <input type="radio" name="payMethod" value="card">카드결제
+                        <input type="radio" name="payMethod" value="account">실시간 계좌이체
+                        <input type="radio" name="payMethod" value="virtual">무통장입금
                     </td>
                 </tr>
             </table>
