@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.mapper.ReviewMapper">
+
+    <insert id="insertReview" parameterType="com.smhrd.model.ReviewDTO">
+        INSERT INTO reviews (review_no, proposal_no, cust_no, review_content, review_ratings, created_at, pch_no, review_name)
+        VALUES (#{review_no}, #{proposal_no}, #{cust_no}, #{review_content}, #{review_ratings}, #{created_at}, #{pch_no}, #{review_name})
+    </insert>
+
+</mapper>
+
