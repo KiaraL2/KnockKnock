@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@page pageEncoding="utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page isELIgnored="false"%>
 <!DOCTYPE html>
@@ -9,9 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>녹녹 - 마이페이지</title>
-    <link rel="icon" href="./df27b972333f6d054a66b507a0889949.ico/favicon-16x16.png" />
-    <link rel="apple-touch-icon" href="./df27b972333f6d054a66b507a0889949.ico/favicon-16x16.png" />
-    <link rel="stylesheet" href="./assets/CSS/Style.css">
+    <link rel="icon" href="./images/favicon.ico" />
+    <link rel="apple-touch-icon" href="./images/favicon.ico" />
+    <link rel="stylesheet" href="./assets/css/style.css">
 
 <body>
     <!-- 헤더 -->
