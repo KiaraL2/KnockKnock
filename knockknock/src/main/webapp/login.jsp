@@ -24,7 +24,7 @@
 
 	<div class="box" id="loginBox">
 		<div>
-			<form action="LoginController" id="loginForm">
+			<form action="LoginController" id="loginForm" method="post">
 				<table>
 				<tr>
 					<td>회원유형</td>

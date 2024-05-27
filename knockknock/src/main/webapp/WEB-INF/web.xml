@@ -40,6 +40,12 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.CustMypageController</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>RequestWriteController</servlet-name>
+		<display-name>RequestWriteController</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.RequestWriteController</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>JoinController</servlet-name>
 		<url-pattern>/JoinController</url-pattern>
@@ -63,5 +69,9 @@
 	<servlet-mapping>
 		<servlet-name>CustMypageController</servlet-name>
 		<url-pattern>/CustMypageController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RequestWriteController</servlet-name>
+		<url-pattern>/RequestWriteController</url-pattern>
 	</servlet-mapping>
 </web-app>
