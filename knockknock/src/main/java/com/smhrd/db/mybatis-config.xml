@@ -16,6 +16,7 @@
 		<typeAlias type="com.smhrd.model.CustomerDTO" alias="CustomerDTO"/>
 		<typeAlias type="com.smhrd.model.SellerDTO" alias="SellerDTO"/>
 		<typeAlias type="com.smhrd.model.ProposalDTO" alias="ProposalDTO"/>
+		<typeAlias type="com.smhrd.model.RequestDTO" alias="RequestDTO"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -33,5 +34,6 @@
 	<mappers>
 		<mapper resource="com/smhrd/mapper/MemberMapper.xml" />
 		<mapper resource="com/smhrd/mapper/ProposalMapper.xml" />
+		<mapper resource="com/smhrd/mapper/RequestMapper.xml" />
 	</mappers>
 </configuration>

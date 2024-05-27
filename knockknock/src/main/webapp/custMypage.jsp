@@ -18,7 +18,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            fetch("header.html")
+            fetch("header.jsp")
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById("header-container").innerHTML = data;
@@ -30,19 +30,16 @@
     <div class="content">
         <div id="miniProfile">
             <div id="profileDiv1">
-                <img src="./꽃집3.jpg" alt="" class="profileImg">
+                <img src="${userInfo.getCust_img()}" alt="구매자기본이미지" class="profileImg">
             </div>
             <div id="clientInfo">
                 <div id="nickname">
-                    <span >구매자 닉네임</span>
-                </div>
-                <div>
-                    <span>가입일자 : </span><span>2024.01.01</span>
+                    <span >${userInfo.getCust_nick()}</span>
                 </div>
             </div>
             <div>
                 <div id="updateButton">
-                    <a href="update.jsp" class="pageButton">개인정보수정</a>
+                    <a href="customerProfileEdit.jsp" class="pageButton">개인정보수정</a>
                 </div>
             </div>
         </div>
@@ -51,7 +48,7 @@
     <div class="content">
         <div>
             <h2>의뢰 내역</h2>
-
+			
             <div class="requestBox">
                 <div class="proposalInfo">
                     <div class="reqTitle">
@@ -114,7 +111,9 @@
             </div>
         </div>
     </div>
-
+<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script type="text/javascript" src="./assets/js/join.js"></script>
 </body>
 
 </html>
