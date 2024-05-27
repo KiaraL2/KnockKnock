@@ -25,7 +25,11 @@
                 });
         });
     </script>
-
+		<c:forEach var="req" items="${sessionScope.reqList}">
+			<ul>
+				<li>${req.getReq_no()}</li>
+			</ul>
+		</c:forEach>
     <h1>마이페이지</h1>
     <div class="content">
         <div id="miniProfile">

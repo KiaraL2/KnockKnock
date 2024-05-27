@@ -18,7 +18,7 @@
 
 	<script>
         document.addEventListener("DOMContentLoaded", function () {
-            fetch("header.html")
+            fetch("header.jsp")
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById("header-container").innerHTML = data;
@@ -36,36 +36,36 @@
 				</tr>
 				<tr>
 					<td>제목</td>
-					<td><input type="text" name="requestTitle"></td>
+					<td><input type="text" name = "req_title"></td>
 				</tr>
 				<tr>
 					<td>파일첨부</td>
-					<td><input type="file" name="requestFile"></td>
+					<td><input type="file" name = "req_file"></td>
 				</tr>
 				<tr>
 					<td>예산</td>
-					<td><input type="text" name="requestBudget"></td>
+					<td><input type="text" name = "req_price"></td>
 				</tr>
 				<tr>
 					<td>용도</td>
-					<td><select name="purpose" id="">
-							<option value="">인테리어</option>
-							<option value="">식용</option>
-							<option value="">선물용</option>
-							<option value="">기타</option>
+					<td><select name="req_use" id="">
+							<option value="interier">인테리어</option>
+							<option value="for_eat">식용재배</option>
+							<option value="gift">선물용</option>
+							<option value="etc">기타</option>
 					</select></td>
 				</tr>
 				<tr>
 					<td>수령방법</td>
-					<td><select name="howReceive" id="">
-							<option value="">온라인 배송</option>
-							<option value="">현장 픽업</option>
-							<option value="">무관</option>
+					<td><select name="req_receipt" id="">
+							<option value="online">온라인 배송</option>
+							<option value="offline">현장 픽업</option>
+							<option value="any">무관</option>
 					</select></td>
 				</tr>
 				<tr>
 					<td id="detail">세부내용</td>
-					<td><textarea name="" id="" cols="40" rows="5"></textarea></td>
+					<td><textarea name="req_content" id="" cols="40" rows="5"></textarea></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" id="button" value="의뢰하기">
