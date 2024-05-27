@@ -6,4 +6,14 @@
 	<select id="showCustRequest" parameterType="CustomerDTO" resultType="RequestDTO">
 		select * from request_info where cust_no = #{cust_no}
 	</select>
+	
+	<select id = "showRequest" resultType = "RequestDTO">
+		select * from request_info
+	</select>
+	
+	<insert id = "requestWrite" parameterType = "RequestDTO">
+		insert into request_info(cust_no, req_title, req_file, req_cate, req_content, req_price) 
+			values (#{cust_no}, #{req_title}, #{req_file}, #{req_cate}, #{req_content}, #{req_price})
+			
+	</insert>
 </mapper>
