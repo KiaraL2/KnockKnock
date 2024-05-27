@@ -47,10 +47,7 @@ public class LoginController extends HttpServlet {
 			} else {
 				System.out.println("로그인 실패");
 			}
-			response.sendRedirect("Main.jsp");
-
 		}
-
+		response.sendRedirect("main.jsp");
 	}
-
 }
