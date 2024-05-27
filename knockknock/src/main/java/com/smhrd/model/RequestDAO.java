@@ -38,5 +38,12 @@ public class RequestDAO {
 		return request_detail;
 	}
 
+	public ArrayList<RequestDTO> showCustRequest(CustomerDTO userInfo) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		ArrayList<RequestDTO> request_list = (ArrayList) session.selectList("showCustRequest");
+		session.close();
+		return request_list;
+	}
+
 }
 

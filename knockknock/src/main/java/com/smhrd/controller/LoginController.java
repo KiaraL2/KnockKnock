@@ -1,6 +1,8 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,15 +24,16 @@ public class LoginController extends HttpServlet {
 			CustomerDTO custDTO = new CustomerDTO(id, pw);
 			CustomerDTO userInfo = new MemberDAO().custLogin(custDTO);
 			if (userInfo != null) {
-				System.out.println("userInfo : " + userInfo);
+				System.out.println("userInfo : " + userInfo.getCust_no());
 				System.out.println("로그인 성공");
 
 				HttpSession session = request.getSession();
-				session.setAttribute("userInfo", userInfo.getCust_no());
+				session.setAttribute("userInfo", userInfo);
 			} else {
 				System.out.println("로그인 실패");
 			}
-			response.sendRedirect("Main.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("CustMypageController");
+					dispatcher.forward(request, response);
 
 		} else {
 			SellerDTO sellerDTO = new SellerDTO(id, pw);
