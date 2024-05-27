@@ -19,7 +19,7 @@
 	<h1>회원가입</h1>
 
 	<div class="box">
-		<form action="JoinController" class="joinForm">
+		<form action="JoinController" class="joinForm" method="post">
 			<table>
 				<tr>
 					<td>회원유형</td>
