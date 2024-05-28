@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="plot"></div>
+    <script>
+        // JSON 파일 불러오기
+        fetch('top_20_popular_products.json')
+            .then(response => response.json())
+            .then(data => {
+                // 색상 배열 정의
+                var colors = ['#FFCC66', '#FFCC66', '#FFCC66', '#FFCC66', '#FFCC66',
+                              '#99CCFF', '#99CCFF', '#99CCFF', '#99CCFF', '#99CCFF',
+                              '#FF9999', '#FF9999', '#FF9999', '#FF9999', '#FF9999',
+                              '#66CCCC', '#66CCCC', '#66CCCC', '#66CCCC', '#66CCCC'];
+
+                // 시각화 생성
+                var trace = {
+                    x: Object.values(data.like_yn).reverse(), // 좋아요 수를 역순으로
+                    y: Object.values(data.seller_id).reverse(), // 판매자 ID를 역순으로
+                    type: 'bar',
+                    orientation: 'h',
+                    marker: {
+                        color: colors, // 색상 지정
+                        line: {
+                            color: 'rgba(58, 71, 80, 1)', // 테두리 색상
+                            width: 1 // 테두리 두께
+                        }
+                    }
+                };
+                var layout = {
+                    title: '좋아요 많이 받은 판매자 상위 20명 ID',
+                    xaxis: {
+                        title: 'Like Count'
+                    },
+                    
+                    bargap: 0.05,
+                    height: 500, // 차트의 세로 크기 조정
+                    width: 1000 // 차트의 가로 크기 조정
+                };
+                Plotly.newPlot('plot', [trace], layout);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>

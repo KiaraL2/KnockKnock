@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="plot"></div>
+    <script>
+        // JSON 파일 불러오기
+        fetch('request_receipt.json')
+            .then(response => response.json())
+            .then(data => {
+                // 데이터 추출
+                var reqUse = Object.values(data.req_use);
+                var reqReceipt = Object.values(data.req_receipt);
+                var custGender = Object.values(data.cust_gender);
+
+                // 데이터 가공
+                var counts = {
+                    'Received': { 'Male': 0, 'Female': 0 },
+                    'Not Received': { 'Male': 0, 'Female': 0 }
+                };
+                for (var i = 0; i < reqUse.length; i++) {
+                    var reqReceiptVal = reqReceipt[i];
+                    var custGenderVal = custGender[i];
+                    if (reqReceiptVal == 'Received') {
+                        counts['Received'][custGenderVal]++;
+                    } else {
+                        counts['Not Received'][custGenderVal]++;
+                    }
+                }
+
+                // 시각화 생성
+                var trace1 = {
+                    x: ['Received', 'Not Received'],
+                    y: [counts['Received']['Male'], counts['Not Received']['Male']],
+                    name: 'Male',
+                    type: 'bar'
+                };
+                var trace2 = {
+                    x: ['Received', 'Not Received'],
+                    y: [counts['Received']['Female'], counts['Not Received']['Female']],
+                    name: 'Female',
+                    type: 'bar'
+                };
+                var layout = {
+                    title: '고객의 의뢰 배송 유무에 따른 분포',
+                    xaxis: {
+                        title: '의뢰 배송 여부'
+                    },
+                    yaxis: {
+                        title: '고객 수'
+                    },
+                    barmode: 'group'
+                };
+                Plotly.newPlot('plot', [trace1, trace2], layout);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매자 연령대 별 선호하는 용도</title>
+    <!-- 필요한 경우 CSS 파일을 여기에 추가할 수 있습니다 -->
+</head>
+<body>
+    <h1>구매자 연령대 별 선호하는 용도</h1>
+    <div id="chart-container"></div>
+
+    <!-- Plotly.js 라이브러리 추가 -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        // JSON 파일 로드
+        fetch('preference_age.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data loaded from JSON:', data);
+
+                // JSON 데이터를 배열로 변환
+                const ageGroups = Object.values(data.age_group);
+                const reqUses = Object.values(data.req_use);
+                const preferenceCounts = Object.values(data.preference_count);
+
+                console.log('Age Groups:', ageGroups);
+                console.log('Request Uses:', reqUses);
+                console.log('Preference Counts:', preferenceCounts);
+
+                // 연령대 별 데이터 그룹화
+                const uniqueAgeGroups = [...new Set(ageGroups)];
+                const uniqueReqUses = [...new Set(reqUses)];
+                const colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728'];
+
+                const traces = uniqueReqUses.map((use, index) => {
+                    const xValues = [];
+                    const yValues = [];
+                    ageGroups.forEach((ageGroup, i) => {
+                        if (reqUses[i] === use) {
+                            xValues.push(ageGroup);
+                            yValues.push(preferenceCounts[i]);
+                        }
+                    });
+
+                    return {
+                        x: xValues,
+                        y: yValues,
+                        name: use,
+                        type: 'bar',
+                        marker: {
+                            color: colors[index % colors.length]
+                        }
+                    };
+                });
+
+                const layout = {
+                    title: '구매자 연령대 별 선호하는 용도',
+                    xaxis: { title: '연령대' },
+                    yaxis: { title: '선호 수' },
+                    barmode: 'group'
+                };
+
+                Plotly.newPlot('chart-container', traces, layout);
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+    </script>
+</body>
+</html>
+
