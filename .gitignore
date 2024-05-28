@@ -5,7 +5,7 @@
 labels.json
 
 ## .properties files ##
-src/main/java/com/smhrd/db/db.properties
+knockknock/src/main/java/com/smhrd/db/db.properties
 
 ### Eclipse ###
 .metadata
