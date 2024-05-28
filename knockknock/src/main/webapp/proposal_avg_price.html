@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구매자 연령대 별 구매 수</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h2>구매자 연령대 별 구매 수</h2>
+    <button type="button" aria-name="뒤로가기" onclick="return goBack();" id="backpage"></button>
     <canvas id="ageChart" width="400" height="200"></canvas>
 
     <script>
@@ -54,5 +57,6 @@
         };
         xhr.send();
     </script>
+    <script type="text/javascript" src="./assets/js/common.js"></script>
 </body>
 </html>

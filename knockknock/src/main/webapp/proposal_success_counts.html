@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제안 별 성공 비율</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
+    <!-- Plotly.js 추가 -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<h1>제안 별 성공 비율</h1>
+  <button type="button" aria-name="뒤로가기" onclick="return goBack();" id="backpage"></button>
+    <div id="pie-chart"></div>
+
+    <script type="text/javascript" src="./assets/js/common.js"></script>
+    <script>
+        // JSON 데이터
+        var proposalSuccessCount = {"N": 1196, "Y": 804};
+
+        // Plotly를 사용하여 파이 차트 생성
+        var data = [{
+            values: Object.values(proposalSuccessCount), // 값 배열
+            labels: Object.keys(proposalSuccessCount),   // 라벨 배열
+            type: 'pie'
+        }];
+
+        var layout = {
+            title: '제안 별 성공 비율'
+        };
+
+        Plotly.newPlot('pie-chart', data, layout);
+    </script>
+</body>
+</html>

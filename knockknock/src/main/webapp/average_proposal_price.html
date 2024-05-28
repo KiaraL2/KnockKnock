@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제안 성공 여부 별 평균제안 가격</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
+    <!-- Plotly.js 추가 -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+	<h1>제안 성공 여부 별 평균제안 가격</h1>
+  <button type="button" aria-name="뒤로가기" onclick="return goBack();" id="backpage"></button>
+    <div id="bar-chart"></div>
+
+    <script type="text/javascript" src="./assets/js/common.js"></script>
+    <script>
+        // JSON 데이터
+        var result = {"성공": 75735.07462686567, "실패": 85929.34782608696};
+
+        // Plotly를 사용하여 막대 차트 생성
+        var data = [{
+            x: Object.keys(result),   // x축 데이터 (Success, Failure)
+            y: Object.values(result), // y축 데이터 (평균 제안 가격)
+            type: 'bar',
+            marker: {
+                color: ['lightcoral', 'lightgreen'] // 각 차트의 색상
+            }
+        }];
+
+        var layout = {
+            title: '제안 성공 여부 별 평균제안 가격',
+            xaxis: {title: '성공 여부'},
+            yaxis: {title: '평균 제안 가격'}
+        };
+
+        Plotly.newPlot('bar-chart', data, layout);
+    </script>
+</body>
+</html>
