@@ -54,7 +54,7 @@
 			</div>
 		</div>
 		<section class="requests_section">
-            <div class="Button">
+            <div class="button">
                 <a type="button" href="requestWrite.jsp" >의뢰서작성</a>
             </div>
 
