@@ -6,23 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>녹녹 - 의뢰서 조회</title>
+<title>녹녹 - 제안서 작성</title>
 <link rel="icon" href="./images/favicon.ico" />
 <link rel="apple-touch-icon" href="./images/favicon.ico" />
 <link rel="stylesheet" href="./assets/css/style.css">
 <body>
 	<!-- 헤더 -->
 	<div id="header-container"></div>
-
-	<script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch("header.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("header-container").innerHTML = data;
-                });
-        });
-    </script>
 
 	<div id="cmpContent">
         <div>
@@ -43,6 +33,6 @@
             </a>
         </div>
     </div>
-
+    <script type="text/javascript" src="./assets/js/header.js"></script>
 </body>
 </html>

@@ -29,7 +29,8 @@
 				</c:choose>
 			</span>
 		</div>
-		<hr>
+		<div id="headerLine">
+        </div>
 	</header>
 </body>
 </html>

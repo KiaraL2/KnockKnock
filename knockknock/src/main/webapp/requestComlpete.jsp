@@ -1,6 +1,6 @@
-<%@page pageEncoding="utf-8" %>
+<%@page pageEncoding="utf-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@page isELIgnored="false" %>
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,34 +14,23 @@
 	<!-- 헤더 -->
 	<div id="header-container"></div>
 
-	<script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch("header.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("header-container").innerHTML = data;
-                });
-        });
-    </script>
-
 	<div id="cmpContent">
-        <div>
-            <img src="./images/complete.png" alt="" id="cmpImg">
+		<div>
+			<img src="./images/complete.png" alt="" id="cmpImg">
 
-        </div>
-        <div>
-            <h1>의뢰서 작성이 완료되었습니다!</h1>
+		</div>
+		<div>
+			<h1>의뢰서 작성이 완료되었습니다!</h1>
 
-        </div>
-        <div>
-            <a href="main.jsp">
-                <div>메인화면으로</div>
-            </a>
-            <a href="requestShow.jsp">
-                <div>의뢰서 확인</div>
-            </a>
-        </div>
-    </div>
-
+		</div>
+		<div>
+			<a href="main.jsp">
+				<div>메인화면으로</div>
+			</a> <a href="requestShow.jsp">
+				<div>의뢰서 확인</div>
+			</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="./assets/js/header.js"></script>
 </body>
 </html>
