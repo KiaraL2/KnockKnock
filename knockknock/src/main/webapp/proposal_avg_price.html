@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매자 연령대 별 구매 수</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h2>구매자 연령대 별 구매 수</h2>
+    <canvas id="ageChart" width="400" height="200"></canvas>
+
+    <script>
+        // JSON 파일 불러오기
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'purchase_age.json', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+
+                // 데이터 가공
+                const ageGroups = data.age_group;
+                const purchaseCounts = data.purchase_count;
+
+                // 차트 데이터 설정
+                const chartData = {
+                    labels: ageGroups,
+                    datasets: [{
+                        label: '구매 수',
+                        data: purchaseCounts,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                };
+
+                // 차트 옵션 설정
+                const chartOptions = {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                };
+
+                // 차트 생성
+                const ctx = document.getElementById('ageChart').getContext('2d');
+                const ageChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: chartData,
+                    options: chartOptions
+                });
+            }
+        };
+        xhr.send();
+    </script>
+</body>
+</html>
