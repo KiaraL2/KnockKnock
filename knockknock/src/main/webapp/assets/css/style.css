@@ -14,11 +14,10 @@ header img {
     height: 130px;
 }
 
-#headerTitle {
-    font-size: 28px;
-    font-weight: bold;
-    padding: 50px;
-    padding-top: 80px;
+#headerLine{
+    width: 100%;
+    height: 1px;
+    background-color: black;
 }
 
 .client {
@@ -28,9 +27,6 @@ header img {
 }
 
 .client a {
-    color: black;
-    text-decoration-line: none;
-    font-weight: bold;
     font-size: 16px;
     padding-right: 20px;
 }
@@ -41,6 +37,11 @@ body {
     padding-left: 220px;
     padding-right: 220px;
     padding-bottom: 100px;
+}
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .content {
@@ -58,6 +59,185 @@ a {
     font-weight: bold;
 }
 
+/* 로그인 화면 */
+#clientType{
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.textinput {
+    width: 350px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+    margin-bottom: 30px;
+}
+#loginForm td{
+    text-align: left;
+}
+#find {
+    margin-top: 20px;
+}
+#find a {
+    color: #AFAEAE;
+    font-weight: normal;
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 10px;
+}
+#find a:last-child {
+    margin-right: 0;
+}
+
+/* 아이디찾기 */
+.auth_code {
+    display: flex;
+    align-items: center;
+}
+.auth_code input[type="password"] {
+    flex-grow: 1;
+}
+.auth_code button {
+    margin-left: 10px;
+}
+.submit-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* 회원가입 */
+.box {
+    width: 450px;
+    background-color: #F0F7F0;
+    border-radius: 10px;
+    border-style: none;
+    margin: 0 auto;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.box>div {
+    margin: 50px;
+}
+
+.joinForm {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#sellerBizNum1 {
+    width: 20%;
+    border-radius: 10px;
+    border-style: none;
+    margin-right: 10px;
+}
+
+#sellerBizNum2 {
+    width: 20%;
+    border-radius: 10px;
+    border-style: none;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#sellerBizNum3 {
+    width: 40%;
+    border-radius: 10px;
+    border-style: none;
+    margin-left: 10px;
+}
+#mailinput{
+    width: 150px;
+}
+.phoneinput{
+    width: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.addinput{
+    width: 150px;
+}
+/* 로그인, 회원가입 상단로고 */
+#centerImg {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#centerImg img {
+    width: 200px;
+    height: 200px;
+}
+#joinButton{
+    margin-top: 30px;
+}
+
+/* 메인페이지 */
+/* 필터 */
+.filter_section{
+    width: 500px;
+    background-color: white;
+    border-color: #45a049;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 50px ;
+}
+
+.search_button{
+    margin-top: 10px;
+    margin-left: 200px;
+}
+.requests_section{
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+.requests_section>.button{
+    float: right;
+}
+/* 의뢰서 */
+.mainRequest{
+    width: 600px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border-style: none;
+    align-items: center;
+    text-align: left;
+    background-color: #F0F7F0;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.mainRequest>div{
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.request_list{
+    width: 750px;
+    display: flex;
+    flex-direction: column;
+}
+.request_list>a{
+    margin-bottom: 30px;
+}
+
+.recommand_list .mainRequest{
+    background-color: white;
+    color: #4CAF50;
+    border-color: black;
+    border-style: solid;
+}
+
+.recommand_list .status{
+    width: 60px;
+    background-color: #f0f7f0;
+    border-radius: 10px;
+    border-style: none;
+    padding: 5px;
+    margin-left: 0px;
+}
 /* 의뢰서 작성 박스 */
 .reqBox {
     width: 450px;
@@ -108,7 +288,7 @@ textarea {
 }
 
 /* 제출버튼(submit) */
-#button {
+.button {
     width: 140px;
     height: 40px;
     background-color: #4CAF50;
@@ -118,9 +298,32 @@ textarea {
     font-size: 18px;
     transition: background-color 0.3s;
 }
+.button>a{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    padding-top: 8px;
+}
+/* 초기화버튼 */
+.resetButton {
+    width: 140px;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #4CAF50;
+    color: black;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
 
-#button:hover {
+.button:hover {
     background-color: #45a049;
+    /* 버튼 호버 색상 변경 */
+}
+.resetButton:hover {
+    background-color: #F0F7F0;
     /* 버튼 호버 색상 변경 */
 }
 
@@ -133,7 +336,7 @@ textarea {
     align-items: center;
     background-color: #4CAF50;
     font-size: 15px;
-    border-radius: 20px;
+    border-radius: 10px;
     border-style: none;
     margin: 0px auto;
     font-weight: bold;
@@ -277,24 +480,13 @@ textarea {
 
 
 /* 제안서조회 */
-.proposal-section {
-    background-color: #F0F7F0;
-    padding: 30px 30px 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 450px;
-    height: 680px;
-    float: right;
-    max-width: 600px;
-    margin-bottom: 20px;
-}
 
 .proposal-section h2 {
     margin-bottom: 20px;
     text-align: center;
 }
 
-.seller-info {
+.seller_info {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -304,24 +496,26 @@ textarea {
     font-size: 16px;
 }
 
-.seller-info img {
+.seller_info img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     margin-right: 20px;
 }
 
-.seller-info div {
+.seller_info div {
     display: flex;
     flex-direction: column;
 }
 
-.proposal-content {
+.proposal_title {
+    height: 30px;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 20px auto;
     background-color: white;
     border-radius: 10px;
     font-size: 16px;
+    font-weight: bold;
 }
 
 .proposal-img {
@@ -339,14 +533,34 @@ textarea {
     border-radius: 10px;
     font-size: 16px;
 }
-
-.proposal-content p {
-    margin: 10px 0;
+.proposal-text {
+    max-height: 7.5em;
+    /* Approx. 5 lines */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease;
 }
 
-.proposal-options {
-    margin-bottom: 20px;
-    font-size: 16px;
+.proposal-text.expanded {
+    max-height: 1000px;
+    /* Large value to accommodate full content */
+}
+
+.more-link {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    cursor: pointer;
+}
+
+.proposal-text.expanded .more-link {
+    display: none;
+}
+
+.proposal-text .more-link {
+    display: block;
 }
 
 .proposal-options div {
@@ -390,6 +604,14 @@ textarea {
     font-size: 16px;
 }
 
+.compareBox{
+    display: flex;
+}
+.compareBox>.box{
+    width: 400px;
+    text-align: center;
+}
+
 /* 리뷰 페이지 */
 #reviewImg {
     width: 200px;
@@ -397,8 +619,15 @@ textarea {
     border-radius: 10px;
     border-style: none;
 }
+.review_space{
+    display: flex;
+    justify-content: center;
+}
+.review_space td{
+    margin-bottom: 10px;
+}
 
-/* 판매자 마이페이지 */
+/* 마이페이지 */
 #miniProfile {
     width: 750px;
     height: 200px;
@@ -416,13 +645,14 @@ textarea {
     margin: 20px;
 }
 
-.profileImg {
+#profileImg {
     width: 150px;
     height: 150px;
     border-radius: 10px;
     border-style: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     float: left;
+    margin: 30px;
 }
 
 #clientInfo {
@@ -433,10 +663,11 @@ textarea {
 #nickname{
     font-weight: bold;
     margin-bottom: 30px;
+    font-size: 20px;
 }
 
-#updateButton {
-    vertical-align: bottom;
+#profileDiv3{
+    flex: 1;
 }
 
 /* 제안내역 */
@@ -444,9 +675,9 @@ textarea {
     width: 750px;
     background-color: #F0F7F0;
     border-radius: 10px;
-    border-style: none;
-    margin-bottom: 50px;
-    padding: 20px;
+    border-style: none; /* 변경된 부분 */
+    border-width: 2px; /* 테두리 두께 조정 */
+    margin: 50px auto;
     display: flex;
     justify-content: center;
 }
@@ -454,23 +685,39 @@ textarea {
 .requestBox>div {
     flex: 1;
     padding-left: 30px;
+    margin: 30px;
 }
 
 .proposalInfo {
     flex: 2;
-    /* 왼쪽 박스가 더 넓게 */
 }
 
 .rightBox {
     flex: 1;
-    /* 오른쪽 박스가 더 좁게 */
     display: flex;
+    justify-content: flex-end;
     flex-direction: column;
-    justify-content: space-between;
+}
+.buttonBox{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-left: 50px;
+}
+
+.requestStatusBox {
+    display: flex; /* 내부 요소들을 가로로 배치 */
+    align-items: flex-start; /* 내부 요소들을 세로 중앙 정렬 */
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+.proposalCount {
+    margin-right: 10px; /* proposalCount와 onGoing 사이의 간격 설정 */
 }
 
 .proposalStatus, .requestStatus {
     font-weight: bold;
+    float: right;
 }
 
 .proposalComlete {
@@ -480,87 +727,125 @@ textarea {
 .onGoing {
     color: #AFAEAE;
 }
-.proposalCount{
-    width: 20px;
-    height: 20px;
+
+.proposalCount {
+    width: 30px; /* 변경된 부분 */
+    height: 30px; /* 변경된 부분 */
     border-radius: 50%;
-    border-style: none;
     background-color: #FF1F00;
+    color: white;
+    text-align: center;
 }
-/* 회원가입 */
-.box {
-    width: 450px;
-    background-color: #F0F7F0;
+
+/* 개인정보 수정 */
+#profileBox label{
+    font-weight: bold;
+}
+.profile-pic img{
+    width: 150px;
+    height: 150px;
     border-radius: 10px;
     border-style: none;
-    margin: 0 auto;
-    padding: 50px;
 }
-
-.box>div {
-    margin: 50px;
+.profile_info div{
+    margin-bottom: 10px;
 }
-
-.joinForm {
-    width: 80%;
-    margin: 0 auto;
-    text-align: left;
+#phone_provider{
+    width: 40px;
 }
-
-#sellerBizNum1 {
-    width: 20%;
-}
-
-#sellerBizNum2 {
-    width: 10%;
-}
-
-#sellerBizNum3 {
-    width: 40%;
-}
-
-/* 로그인, 회원가입 상단로고 */
-#centerImg {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#centerImg img {
-    width: 200px;
-    height: 200px;
-}
-
-/* 로그인 화면 */
-#loginBox {
-    text-align: center;
-}
-#loginForm td input {
-    width: 350px;
+.phone_input>select{
     height: 40px;
-    border-radius: 10px;
     border-style: none;
-    margin-bottom: 30px;
 }
-#loginForm td{
-    text-align: left;
-}
-#find {
-    margin-top: 20px;
-}
-#find a {
-    color: #AFAEAE;
-    font-weight: normal;
-    font-size: 14px;
-    display: inline-block;
-    margin-right: 10px;
-}
-#find a:last-child {
-    margin-right: 0;
-}
-#loginForm {
-    display: inline-block;
+.phone_input>input{
+    width: 70px;
 }
 
-#loginForm table {
-    width: 350px;
+/* 판매자 프로필 */
+.self_intro >p{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+.portfolio >div{
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    max-width: 100%; /* Ensure it doesn't exceed the width of the container */
+    padding: 20px; /* Add padding inside the scrollable area */
+    background-color: white; /* Ensure the background is consistent */
+    border-radius: 10px; /* Match the border radius */
+}
+
+.portfolio > .input-container {
+    display: flex;
+    flex-wrap: wrap; /* 입력 필드가 줄 바꿈이 되도록 함 */
+    max-width: 100%; /* 컨테이너의 너비를 넘지 않도록 함 */
+    padding: 20px; /* 스크롤 가능한 영역 안에 패딩 추가 */
+    background-color: white; /* 배경색을 일관되게 유지 */
+    border-radius: 10px; /* 테두리 반경을 맞춤 */
+}
+
+.input-container input {
+    margin-right: 10px; /* 입력 요소들 간의 간격 */
+    margin-bottom: 10px; /* 줄 바꿈 시 아래 간격 추가 */
+}
+
+.input-container .remove-button {
+    background-color: #dc3545; /* 삭제 버튼 배경색 */
+    color: white; /* 삭제 버튼 텍스트 색상 */
+    border: none; /* 삭제 버튼 테두리 제거 */
+    padding: 10px; /* 삭제 버튼 패딩 */
+    border-radius: 5px; /* 삭제 버튼 테두리 반경 */
+    cursor: pointer; /* 커서 포인터 */
+    margin-right: 10px; /* 삭제 버튼과 다음 요소 간의 간격 */
+    margin-bottom: 10px; /* 줄 바꿈 시 아래 간격 추가 */
+}
+
+.input-container .add-button {
+    background-color: #007bff; /* 추가 버튼 배경색 */
+    color: white; /* 추가 버튼 텍스트 색상 */
+    border: none; /* 추가 버튼 테두리 제거 */
+    padding: 10px; /* 추가 버튼 패딩 */
+    border-radius: 5px; /* 추가 버튼 테두리 반경 */
+    cursor: pointer; /* 커서 포인터 */
+    margin-bottom: 10px; /* 줄 바꿈 시 아래 간격 추가 */
+}
+
+.input-container .add-button:hover {
+    background-color: #0056b3; /* 추가 버튼 호버 시 배경색 */
+}
+
+
+
+.portfolio img {
+    flex: 0 0 auto; /* Ensure images don't shrink or grow */
+    width: 150px; /* Set a fixed width for the images */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add some space between the images */
+    transition: transform 0.3s ease; /* 변환 효과를 부드럽게 적용 */
+}
+
+.portfolio img:hover {
+    transform: scale(1.1); /* 마우스를 올렸을 때 이미지 크기 증가 */
+}
+
+.reviews > div{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.review img{
+    border-radius: 10px;
+}
+.review div div{
+    margin-bottom: 5px;
+}
+
+.reviewer{
+    font-weight: bold;
+}
+.review_date{
+    font-size: 13px;
 }

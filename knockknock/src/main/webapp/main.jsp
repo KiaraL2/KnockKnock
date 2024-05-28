@@ -16,209 +16,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>녹녹-플랜테리어 플랫폼</title>
-<style>
-/* 헤더 스타일 */
-header {
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
+<link rel="icon" href="./images/favicon.ico" />
 
-header>div {
-	display: flex;
-}
-
-header img {
-	width: 130px;
-	height: 130px;
-}
-
-#headerTitle {
-	font-size: 28px;
-	font-weight: bold;
-	padding: 50px;
-	padding-top: 80px;
-	text-decoration-line: none;
-}
-
-.client {
-	position: absolute;
-	right: 220px;
-	vertical-align: bottom;
-}
-
-.client a {
-	color: black;
-	text-decoration-line: none;
-	font-weight: bold;
-	font-size: 16px;
-	padding-right: 20px;
-}
-
-/* 바디전체 여백 */
-body {
-	position: relative;
-	padding-left: 220px;
-	padding-right: 220px;
-	padding-bottom: 100px;
-}
-
-.filter-section {
-	width: 700px;
-	height: 200px;
-	padding: 20px;
-	background-color: white;
-	border-radius: 30px;
-	border: 1px solid #4CAF50;
-	margin: 20px auto;
-	box-sizing: border-box;
-	margin-bottom: 20px;
-}
-
-.filter-box, .search-button {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 10px;
-}
-
-.filter {
-	display: flex;
-	flex-direction: column;
-}
-
-.filter label {
-	margin-top: 10px;
-	margin-bottom: 5px;
-}
-
-.filter select {
-	padding: 10px;
-	border: 1px solid #cccccc;
-	border-radius: 10px;
-}
-
-.search-bar {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-}
-
-.search-button>input {
-	margin-top: 20px;
-	padding: 10px 20px;
-	border: 1px solid #cccccc;
-	border-radius: 10px;
-	background-color: #4CAF50;
-	color: white;
-	cursor: pointer;
-}
-
-.requests-section {
-	width: 100%;
-	max-width: 1200px;
-	padding: 20px;
-	box-sizing: border-box;
-}
-
-.request-list {
-	background-color: #ffffff;
-	border: 1px solid #dddddd;
-	border-radius: 5px;
-	padding: 20px;
-	box-sizing: border-box;
-}
-
-.new-request-btn {
-	margin-bottom: 10px;
-	padding: 10px 20px;
-	background-color: #4caf50;
-	color: #ffffff;
-	border: none;
-	border-radius: 10px;
-	cursor: pointer;
-	text-decoration-line: none;
-}
-
-.request-item {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 15px;
-	border-bottom: 1px solid #eeeeee;
-}
-
-.request-item:last-child {
-	border-bottom: none;
-}
-
-.request-item .usage {
-	font-weight: bold;
-}
-
-.request-item .description {
-	flex: 1;
-	margin-left: 20px;
-}
-
-.request-item .rating {
-	background-color: #ff5722;
-	color: #ffffff;
-	border-radius: 50%;
-	width: 25px;
-	height: 25px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-/* 추가된 CSS */
-#menu {
-	display: none;
-	position: fixed;
-	right: 0;
-	top: 0;
-	width: 300px;
-	background-color: white;
-	border-left: 1px solid #ccc;
-	height: 100%;
-	box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-	padding: 20px;
-	z-index: 1000;
-}
-
-.request-item {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px;
-	border-bottom: 1px solid #ddd;
-}
-
-.request-item span {
-	margin-right: 10px;
-}
-</style>
+<link rel="apple-touch-icon" href="./images/favicon.ico" />
+<link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 	<!-- 헤더 -->
 	<div id="header-container"></div>
 
-	<script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch("header.jsp")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("header-container").innerHTML = data;
-                });
-        });
-    </script>
-
-	<div class="content">
-		<!-- Page content goes here -->
-	</div>
-	<main>
-		<section class="filter-section">
+	<div id="main">
+		<div class="filter_section">
 			<div class="filter-box">
 				<div class="filter">
 					<label for="usage">용도</label> <select id="usage">
@@ -227,43 +36,62 @@ body {
 						<option value="eat">식용</option>
 						<option value="guitar">기타</option>
 					</select>
-				</div>
-				<div class="filter">
-					<label for="size">크기</label> <select id="size">
-						<option value="all">전체</option>
-						<option value="minu">미니</option>
-						<option value="small">소</option>
-						<option value="medium">중</option>
-						<option value="big">대</option>
+					<label for="size">수령방법</label> <select id="receipt">
+						<option value="any">무관</option>
+						<option value="online">온라인 배송</option>
+						<option value="offline">현장 픽업</option>
 					</select>
-				</div>
-				<div class="filter">
-					<label for="lighting">일조량</label> <select id="lighting">
-						<option value="all">전체</option>
-						<option value="low">낮음</option>
-						<option value="soso">중간</option>
-						<option value="high">높음</option>
-					</select>
-				</div>
-				<div class="filter">
-					<label for="maintenance">관리주기</label> <select id="maintenance">
-						<option value="all">전체</option>
-						<option value="low">매일</option>
-						<option value="medium">2-3일</option>
-						<option value="high">2-3주</option>
+					<label for="lighting">진행상태</label> <select id="status">
+						<option value="onGoing">진행중</option>
+						<option value="completed">거래완료</option>
+						<option value="canceled">의뢰취소</option>
 					</select>
 				</div>
 			</div>
-			<div class="search-button">
-				<input type="reset" value="초기화"> <input type="button"
-					value="검색">
+			<div class="search_button">
+				<input type="reset" value="초기화" class="resetButton"> <input type="button"
+					value="검색" class="button">
 			</div>
-		</section>
-		<section class="requests-section">
-			<div class="request-list">
-				<a type="button" class="new-request-btn" href="requestWrite.jsp">의뢰서
-					작성</a>
+		</div>
+		<section class="requests_section">
+            <div class="Button">
+                <a type="button" href="requestWrite.jsp" >의뢰서작성</a>
+            </div>
 
+            <div class="recommand">
+                <h2>추천 의뢰서</h2>
+            <div class="recommand_list">
+                <a href="requestShow.jsp">
+                    <div class="mainRequest">
+                        <div><span>2024.05.27.</span></div>
+                        <div>골드 이상만 제안받아요</div>
+                        <div class="proposalCount">2</div>
+                        <div class="status onGoing">진행중</div>
+                    </div>
+
+                </a>
+            </div>
+
+            </div>
+            <h2>전체 의뢰서</h2>
+            <div class="request_list">
+                <a href="requestShow.jsp">
+                    <div class="mainRequest">
+                        <div><span>2024.05.28.</span></div>
+                        <div>인테리어용 식물 추천좀요</div>
+                        <div class="proposalCount">4</div>
+                        <div class="status onGoing">진행중</div>
+                    </div>
+                </a>
+                <a href="requestShow.jsp">
+                    <div class="mainRequest">
+                        <div><span>2024.05.28.</span></div>
+                        <div>인테리어용 식물 추천좀요</div>
+                        <div class="proposalCount">4</div>
+                        <div class="status proposalComlete">거래 완료</div>
+                    </div>
+                </a>
+            </div>
 				<!-- 의뢰서리스트 올부분 -->
 				<c:set var="seller_no" value="${sessionScope.userInfo.getSeller_no()}"></c:set>
 				<c:if test="${sessionScope.userInfo.getSeller_no() ne null}">
@@ -274,8 +102,8 @@ body {
 						</c:forEach>
 					</ul>
 				</c:if>
-			</div>
 		</section>
-	</main>
+	</div>
+	<script type="text/javascript" src="./assets/js/header.js"></script>
 </body>
 </html>

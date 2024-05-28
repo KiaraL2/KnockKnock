@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>녹녹 - 회원가입</title>
+<title>녹녹 - 로그인</title>
 <link rel="icon" href="./images/favicon.ico" />
 <link rel="apple-touch-icon" href="./images/favicon.ico" />
 <link rel="stylesheet" href="./assets/css/style.css">
@@ -22,26 +22,27 @@
 
 	<div class="box" id="loginBox">
 		<div>
-			<form name="login" action="LoginController" id="loginForm"
-				method="post" onsubmit="return test()">
+			<form action="LoginController" id="loginForm">
 				<table>
 					<tr>
 						<td>회원유형</td>
 					</tr>
 					<tr>
-						<td><input type="radio" name="clientType" value="customer">일반회원
-							<input type="radio" name="clientType" value="seller">판매자</td>
+						<td id="clientType"><input type="radio" name="clientType"
+							value="customer">일반회원 <input type="radio"
+							name="clientType" value="seller">판매자</td>
+					</tr>
 					<tr>
 						<td>아이디</td>
 					</tr>
 					<tr>
-						<td><input type="text" name="id"></td>
+						<td><input type="text" name="id" class="textinput"></td>
 					</tr>
 					<tr>
 						<td>비밀번호</td>
 					</tr>
 					<tr>
-						<td><input type="text" name="pw"></td>
+						<td><input type="text" name="pw" class="textinput"></td>
 					</tr>
 				</table>
 				<input type="submit" id="button" value="로그인">
@@ -56,33 +57,7 @@
 						찾기</i></a>
 			</div>
 		</div>
-		<a id="admin">2024-05-28</a>
-		<script type="text/javascript">
-			$admin = document.getElementById('admin')
-			$admin.addEventListener('contextmenu',(e)=>{
-				e.preventDefault()
-				if(e.ctrlKey && e.altKey && e.button === 2){
-					location.href = "admin.jsp"
-				}
-			})
-			function test() {
-				const $loginForm = document.forms.login
-				const type = $loginForm.elements.clientType.value
-				const id = $loginForm.elements.id
-				const pw = $loginForm.elements.pw
-				
-				if(!type){
-				return false
-				}
-				if(!id){
-				return false
-				}
-				if(!pw){
-				return false
-				}
-				return true
-			}
-		</script>
 	</div>
 </body>
+
 </html>
