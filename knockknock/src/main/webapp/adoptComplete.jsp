@@ -14,16 +14,6 @@
 	<!-- 헤더 -->
 	<div id="header-container"></div>
 
-	<script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch("header.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("header-container").innerHTML = data;
-                });
-        });
-    </script>
-
 	<div id="cmpContent">
 		<div>
 			<img src="./images/adopt.png" alt="" id="cmpImg">
@@ -33,13 +23,13 @@
 
 		</div>
 		<div>
-			<a href="proposalShow.jsp">
-				<div>제안서 조회</div>
+            <a href="proposalShow.jsp">
+                <div>제안서 조회</div>
 			</a> <a href="pay.jsp">
 				<div>결제하기</div>
 			</a>
 		</div>
 	</div>
-
+	<script type="text/javascript" src="./assets/js/header.js"></script>
 </body>
 </html>
