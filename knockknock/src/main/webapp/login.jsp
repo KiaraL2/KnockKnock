@@ -42,7 +42,7 @@
 						<td>비밀번호</td>
 					</tr>
 					<tr>
-						<td><input type="text" name="pw" class="textinput"></td>
+						<td><input type="password" name="pw" class="textinput"></td>
 					</tr>
 				</table>
 				<input type="submit" id="button" value="로그인">
