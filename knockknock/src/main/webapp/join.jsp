@@ -28,7 +28,7 @@
 				</tr>
 				<tr>
 					<td><input type="radio" name="clientType" value="customer"
-						id="general">일반회원 <input type="radio" name="clientType"
+						id="general" checked="checked">일반회원 <input type="radio" name="clientType"
 						value="seller" id="seller">판매자</td>
 				</tr>
 				<tr>
@@ -70,8 +70,8 @@
 					<td>전화번호</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="phone" class="textinput phoneinput">-<input
-						type="text" name="phone" class="textinput phoneinput">-<input type="text" name="phone" class="textinput phoneinput"></td>
+					<td><input type="number" oninput="handleOnInput(this, 4)" name="phone" class="textinput phoneinput">-<input
+						  type="number" oninput="handleOnInput(this, 4)" name="phone" class="textinput phoneinput">-<input type="number" oninput="handleOnInput(this, 4)" name="phone" class="textinput phoneinput"></td>
 				</tr>
 				<tr>
 					<td>주소</td>
@@ -79,7 +79,7 @@
                 
 				<tr>
 					<td><input type="text" id="sample4_postcode"
-						placeholder="우편번호" class="addinput textinput"> <input type="button"
+						placeholder="우편번호" class="addinput textinput"> <input class="button" type="button"
 						onclick="sample4_execDaumPostcode()" value="우편번호 찾기" ><input
 						type="text" name="address" id="sample4_roadAddress"
 						placeholder="도로명주소" readonly="readonly" class="addinput textinput"> <input
@@ -132,7 +132,7 @@
 				</tr>
 			</table>
 			<div id="joinButton">
-				<input type="submit" value="회원가입" id="button">
+				<input type="submit" value="회원가입" class="button">
 			</div>
 		</form>
 	</div>

@@ -19,21 +19,23 @@ public class LoginController extends HttpServlet {
 		String clientType = request.getParameter("clientType");
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-
+		String moveURL;
 		if (clientType.equals("customer")) {
 			CustomerDTO custDTO = new CustomerDTO(id, pw);
 			CustomerDTO userInfo = new MemberDAO().custLogin(custDTO);
 			if (userInfo != null) {
 				System.out.println("userInfo : " + userInfo.getCust_no());
 				System.out.println("로그인 성공");
+				moveURL = "main.jsp";
 
 				HttpSession session = request.getSession();
 				session.setAttribute("userInfo", userInfo);
 			} else {
 				System.out.println("로그인 실패");
+				moveURL = "login.jsp";
 			}
-			RequestDispatcher dispatcher = request.getRequestDispatcher("CustMypageController");
-					dispatcher.forward(request, response);
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("CustMypageController");
+//					dispatcher.forward(request, response);
 
 		} else {
 			SellerDTO sellerDTO = new SellerDTO(id, pw);
@@ -41,13 +43,16 @@ public class LoginController extends HttpServlet {
 			if (userInfo != null) {
 				System.out.println("userInfo : " + userInfo.getSeller_no());
 				System.out.println("로그인 성공");
+				moveURL = "main.jsp";
+				
 
 				HttpSession session = request.getSession();
 				session.setAttribute("userInfo", userInfo);
 			} else {
 				System.out.println("로그인 실패");
+				moveURL = "login.jsp";
 			}
 		}
-		response.sendRedirect("main.jsp");
+		response.sendRedirect(moveURL);
 	}
 }

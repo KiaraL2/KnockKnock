@@ -20,11 +20,11 @@
 			</div>
 			<span class="client"> <c:choose>
 					<c:when test="${sessionScope.userInfo ne null}">
-						<a href="LogoutController">로그아웃</a>
-						<a href="CustMypageController">마이페이지</a>
+						<a href="LogoutController">로그아웃</a>
+						<a href="CustMypageController">마이페이지</a>
 					</c:when>
 					<c:otherwise>
-						<a href="login.jsp">로그인</a>
+						<a href="login.jsp">로그인</a>
 					</c:otherwise>
 				</c:choose>
 			</span>

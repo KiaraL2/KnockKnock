@@ -1,3 +1,15 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox  */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
 /* 헤더 스타일 */
 header {
     padding-top: 30px;
@@ -226,10 +238,20 @@ a {
 .recommand_list .mainRequest{
     background-color: white;
     color: #4CAF50;
-    border-color: black;
     border-style: solid;
+    border-color: black;
+    margin-bottom: 20px; 
 }
-
+.request_title{
+	width :200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* 텍스트가 너무 길 경우 말줄임표로 대체됩니다 */
+}
+.request_date{
+	width: 90px;
+}
 .recommand_list .status{
     width: 60px;
     background-color: #f0f7f0;

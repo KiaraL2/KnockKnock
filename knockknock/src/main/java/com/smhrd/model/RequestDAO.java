@@ -49,10 +49,8 @@ public class RequestDAO {
 	public static ArrayList<RequestDTO> requestRecommend(int seller_no) {
 		SqlSession session = sqlSessionFactory.openSession(true);
 		ArrayList<RequestDTO> request_list = (ArrayList) session.selectList("requestRecommend", seller_no);
-		System.out.println(request_list.size());
 		session.close();
 		return request_list;
 	}
-
 }
 

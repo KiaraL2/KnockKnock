@@ -22,6 +22,7 @@ public class RequestDTO {
 	private String is_canceled;
 	private String is_completed;
 	private String expired_at;
+	private int proposal_count;
 	
 	public RequestDTO(int cust_no, String req_title, String req_file, String req_cate, String req_content, String req_price) {
 		this.cust_no = cust_no;
