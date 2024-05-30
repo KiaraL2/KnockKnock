@@ -16,7 +16,7 @@ public class LogoutController extends HttpServlet {
 		System.out.println("로그아웃 성공");
 		
 		// Main.jsp로 이동
-		response.sendRedirect("Main.jsp");
+		response.sendRedirect("main.jsp");
 	}
 
 }

@@ -24,7 +24,7 @@
 
 				<div class="box" id="loginBox">
 					<div>
-						<form name="login" action="LoginController" id="loginForm" onsubmit="return test()">
+						<form name="login" action="LoginController" id="loginForm" method="post" onsubmit="return test()">
 							<table>
 								<tr>
 									<td>회원유형</td>
@@ -44,10 +44,10 @@
 									<td>비밀번호</td>
 								</tr>
 								<tr>
-									<td><input type="text" name="pw" class="textinput"></td>
+									<td><input type="password" name="pw" class="textinput"></td>
 								</tr>
 							</table>
-							<input type="submit" id="button" value="로그인">
+							<input type="submit" class="button" value="로그인">
 						</form>
 					</div>
 					<div>

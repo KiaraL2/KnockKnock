@@ -37,72 +37,46 @@
 	<div class="content">
 		<div>
 			<h2>의뢰 내역</h2>
-
-			<div class="requestBox">
-				<div class="proposalInfo">
-					<div class="reqTitle">
-						<h3>의뢰 제목</h3>
-					</div>
-					<div>
-						<span>2024.05.23 20:07</span>
-					</div>
-				</div>
-				<div class="rightBox">
-					<div class="requestStatusBox">
-						<!-- 제안중인 판매자 -->
-						<div class="proposalCount"></div>
-						<div class="requestStatus">
-							<span class="onGoing">의뢰중</span>
+			<c:forEach var="req" items="${sessionScope.reqList}">
+				<div class="requestBox">
+					<div class="proposalInfo">
+						<div class="reqTitle">
+							<h3>${req.getReq_title()}</h3>
+						</div>
+						<div>
+							<span>${req.getCreated_at()}</span>
 						</div>
 					</div>
-					<div class="buttonBox">
-						<a href="requestShow.jsp" class="pageButton">의뢰현황</a>
-					</div>
-				</div>
-			</div>
-			<div class="requestBox">
-				<div class="proposalInfo">
-					<div class="reqTitle">
-						<h3>의뢰 제목</h3>
-					</div>
-					<div>
-						<span>2024.05.23 20:07</span>
-					</div>
-				</div>
-				<div class="rightBox">
-					<div class="requestStatusBox">
-						<div class="requestStatus">
-							<span class="proposalComlete">거래 완료</span>
+					<div class="rightBox">
+						<div class="requestStatusBox">
+							<!-- 제안중인 판매자 -->
+							<div class="proposalCount">${req.getProposal_count()}</div>
+							<div class="requestStatus">
+								<span class="onGoing">
+								<c:choose>
+									<c:when test="${req.getIs_canceled() eq 'Y'}">
+										취소
+									</c:when>
+									<c:when test="${req.getIs_canceled() eq 'N'}">
+										<c:choose>
+											<c:when test="${req.getIs_completed() eq 'Y'}">
+												거래완료
+											</c:when>
+											<c:otherwise>
+												의뢰중
+											</c:otherwise>
+										</c:choose>
+									</c:when>
+								</c:choose>
+								</span>
+							</div>
+						</div>
+						<div class="buttonBox">
+							<a href="requestShow.jsp" class="pageButton">의뢰현황</a>
 						</div>
 					</div>
-					<div class="buttonBox">
-						<a href="requestShow.jsp" class="pageButton"> 거래내역 보기 </a>
-					</div>
 				</div>
-			</div>
-			<div class="requestBox">
-				<div class="proposalInfo">
-					<div class="reqTitle">
-						<h3>의뢰 제목</h3>
-					</div>
-					<div>
-						<span>2024.05.23 20:07</span>
-					</div>
-				</div>
-				<div class="rightBox">
-
-					<div class="requestStatusBox">
-						<!-- 제안중인 판매자 -->
-						<div class="requestStatus">
-							<span class="requestStatus reqCancel">의뢰 취소</span>
-						</div>
-					</div>
-					<div class="buttonBox">
-						<a href="requestShow.jsp" class="pageButton">의뢰현황</a>
-					</div>
-				</div>
-
-			</div>
+			</c:forEach>
 		</div>
 	</div>
 	<script

@@ -5,7 +5,7 @@
 <mapper namespace="com.smhrd.mapper.RequestMapper">
 	<select id="showCustRequest" parameterType="CustomerDTO"
 		resultType="RequestDTO">
-		select * from request_info where cust_no = #{cust_no}
+		select *, (select count(*) from request_info where cust_no = #{cust_no}) as pro_count from request_info where cust_no = #{cust_no};
 	</select>
 
 	<select id="showRequest" resultType="RequestDTO">
@@ -16,12 +16,15 @@
 		insert into
 		request_info(cust_no, req_title, req_file, req_cate, req_content,
 		req_price)
-		values (#{cust_no}, #{req_title}, #{req_file}, #{req_cate}, #{req_content},
+		values (#{cust_no}, #{req_title}, #{req_file}, #{req_cate},
+		#{req_content},
 		#{req_price})
 	</insert>
 
 	<select id="requestRecommend" resultType="RequestDTO">
-		SELECT ri.*
+		SELECT ri.*,
+		(SELECT COUNT(*) FROM proposal_info WHERE req_no = ri.req_no) AS
+		proposal_count
 		FROM request_info ri
 		JOIN like_info li ON ri.cust_no = li.cust_no
 		LEFT JOIN proposal_info pi ON ri.req_no = pi.req_no
@@ -38,11 +41,10 @@
 		ELSE 2
 		END,
 		YEAR(ri.created_at) DESC,
-		(SELECT COUNT(*)
-		FROM request_info ri_sub
-		WHERE ri_sub.cust_no = ri.cust_no
+		(SELECT COUNT(*) FROM request_info ri_sub WHERE ri_sub.cust_no = ri.cust_no
 		AND ri_sub.is_completed = 'Y') DESC,
 		ri.created_at DESC
 		LIMIT 3;
+
 	</select>
 </mapper>

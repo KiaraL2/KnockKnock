@@ -19,9 +19,19 @@
 
 	<div class="box" id="profileBox">
 		<div class="profile-pic">
-			<!-- ${userInfo.getCust_img()} -->
-			<img src="./images/꽃집3.jpg" alt="Profile Picture"> <input
-				type="file" id="profilePicInput" style="display: none;"
+			<c:choose>
+				<c:when test="${sessionScope.userInfo ne null}">
+					<c:choose>
+						<c:when test="${sessionScope.userInfo.getCust_no() ne null}">
+							<img src="./images/generalDefaultImg.png" alt="Profile Picture">
+						</c:when>
+					</c:choose>
+				</c:when>
+				<c:otherwise>
+					<img src="./images/SellerDefaultImg.jpg" alt="Profile Picture">
+				</c:otherwise>
+			</c:choose>
+			<input type="file" id="profilePicInput" style="display: none;"
 				accept="image/*">
 			<button class="button" id="changePicButton">사진 변경</button>
 		</div>
@@ -55,13 +65,9 @@
 			<div class="form-group">
 				<label for="phone">전화번호</label>
 				<div class="phone_input">
-					<select id="phone_provider">
-						<option value="KT">KT</option>
-						<option value="SKT">SKT</option>
-						<option value="LGU">LGU+</option>
-					</select> <input type="text" name="phone" class="textinput phoneinput">-<input
-						type="text" name="phone" class="textinput phoneinput">-<input
-						type="text" name="phone" class="textinput phoneinput">
+					<input type="number" oninput="handleOnInput(this, 4)" name="phone" class="textinput phoneinput">-<input
+						 type="number" oninput="handleOnInput(this, 4)" name="phone" class="textinput phoneinput">-<input
+						 type="number" oninput="handleOnInput(this, 4)" name="phone" class="textinput phoneinput">
 				</div>
 			</div>
 			<div class="form-group">
@@ -81,7 +87,8 @@
 			<input type="button" value="회원탈퇴" onclick="" class="button">
 		</div>
 	</div>
-
+	
+	<script type="text/javascript" src="./assets/js/join.js"></script>
 	<script>
 		document.getElementById("changePicButton").addEventListener("click",
 				function() {

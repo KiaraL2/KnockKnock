@@ -17,6 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 });
 
+function handleOnInput(el, maxlength) {
+  if(el.value.length > maxlength)  {
+    el.value 
+      = el.value.substr(0, maxlength);
+  }
+}
+
 /* 카카오주소 api */
 function sample4_execDaumPostcode() {
 	new daum.Postcode({
